@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+  ~ @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+  ~ @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk/)
+  ~ @Package:   DeployEcommerce_DynamicSwatchLink
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="DeployEcommerce_DynamicSwatchLink" setup_version="1.0.1">
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Checkout"/>
+            <module name="Magento_Swatches"/>
+        </sequence>
+    </module>
+</config>

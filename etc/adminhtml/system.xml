@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!--
+  ~ @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+  ~ @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk/)
+  ~ @Package:   DeployEcommerce_DynamicSwatchLink
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="deploy" translate="label" sortOrder="2">
+            <label>Deploy Ecommerce</label>
+        </tab>
+        <section id="dynamic_swatch_link" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                 translate="label">
+            <label>Dynamic Swatches</label>
+            <tab>deploy</tab>
+            <resource>DeployEcommerce_CustomSwatches::config_DeployEcommerce_CustomSwatches</resource>
+            <group id="general_settings" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                   translate="label">
+                <label>General Settings</label>
+                <field id="enable" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>Enable Module</label>
+                    <comment/>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="listing_page" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                   translate="label">
+                <label>Product Listing Page</label>
+                <field id="enable" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>Enable Pre Selection Links</label>
+                    <comment/>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="display_page" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                   translate="label">
+                <label>Product Display Page</label>
+                <field id="enable" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>Enable Product Matrix</label>
+                    <comment/>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,41 @@
+<?php
+/*
+ * @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+ * @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk/)
+ * @Package:   DeployEcommerce_DynamicSwatchLink
+ */
+
+use DeployEcommerce\DynamicSwatchLink\Plugin\Swatches\Block\Product\Renderer\Configurable;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+use Magento\Swatches\ViewModel\Product\Renderer\Configurable as ConfigurableViewModel;
+
+/** @var Configurable $block */
+/** @var ConfigurableViewModel $configurableViewModel */
+/** @var SecureHtmlRenderer $secureRenderer */
+
+$configurableViewModel = $block->getConfigurableViewModel();
+
+?>
+
+<div class="dynamic-swatch-links-wrapper">
+    <table id="tableScroller"
+           class="tableScroller table-striped table-bordered table-responsive-md"
+           data-mage-init='{
+               "DeployEcommerce_DynamicSwatchLink/js/dynamic-swatch-link":
+               {
+                    "data": <?= $block->renderTableData() ?>,
+                    "jsonConfig": <?= $block->getJsonConfig() ?>,
+                    "jsonSwatchConfig": <?= $block->getJsonSwatchConfig() ?>
+                }
+           }'>
+        <thead>
+        <tr>
+            <?php foreach ($block->getTableHeaders() as $headerKey => $headerLabel): ?>
+                <th data-prop="<?= $headerKey ?>" data-way="up"><?= $headerLabel ?></th>
+            <?php endforeach; ?>
+            <th data-prop="qty" data-way="up">QTY</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

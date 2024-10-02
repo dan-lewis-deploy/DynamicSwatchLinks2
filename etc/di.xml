@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+  ~ @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+  ~ @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk/)
+  ~ @Package:   DeployEcommerce_DynamicSwatchLink
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Swatches\Block\Product\Renderer\Configurable"
+                type="DeployEcommerce\DynamicSwatchLink\Plugin\Swatches\Block\Product\Renderer\Configurable"
+    />
+    <type name="Magento\Catalog\Block\Product\View">
+        <plugin name="DeployEcommerce_DynamicSwatchLink_Catalog_Product_View_Plugin"
+                type="DeployEcommerce\DynamicSwatchLink\Plugin\Catalog\Block\Product\View"/>
+    </type>
+    <type name="Magento\Checkout\Controller\Cart\Add">
+        <plugin name="DeployEcommerce_DynamicSwatchLink_Checkout_Controller_Cart_Add_Plugin"
+                type="DeployEcommerce\DynamicSwatchLink\Plugin\Checkout\Controller\Cart\Add"/>
+    </type>
+</config>

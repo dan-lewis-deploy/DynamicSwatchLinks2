@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+  ~ @Author:    Dan Lewis (dan.lewis@deploy.co.uk)
+  ~ @Copyright: 2024 Deploy Ecommerce (https://www.deploy.co.uk/)
+  ~ @Package:   DeployEcommerce_DynamicSwatchLink
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch_catalog_product_view">
+        <observer name="deployecommerce_dynamicswatchlink_products_observer_predispatch"
+                  instance="DeployEcommerce\DynamicSwatchLink\Observer\Predispatch"
+        />
+    </event>
+</config>

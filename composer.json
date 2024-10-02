@@ -1,0 +1,21 @@
+{
+    "name": "deployecommerce/module-dynamic-swatch-link",
+    "version": "1.0.1",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-catalog": "104.0.*"
+    },
+    "license": [
+        "GNU General Public License (GPL)"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DeployEcommerce\\DynamicSwatchLink\\": ""
+        }
+    }
+}
